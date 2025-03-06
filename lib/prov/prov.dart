@@ -6,4 +6,11 @@ class Control extends ChangeNotifier {
     checkLan = value;
     notifyListeners();
   }
+
+  bool showpass = false;
+  changeShowPass() {
+    showpass = !showpass;
+    print(showpass);
+    notifyListeners();
+  }
 }
