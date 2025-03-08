@@ -54,11 +54,14 @@ class _Verficode extends State<Verficode> {
             ),
             Container(
               width: 200,
+              height: 65,
               child: Row(
                 children: [
                   Expanded(
                       child: Container(
+                    padding: EdgeInsets.all(2),
                     child: TextFormField(
+                      textAlign: TextAlign.center,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "فارغ";
@@ -78,7 +81,94 @@ class _Verficode extends State<Verficode> {
                       decoration: InputDecoration(
                           hintText: "*",
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20))),
+                              borderRadius: BorderRadius.circular(15))),
+                    ),
+                  )),
+                  Expanded(
+                      child: Container(
+                    padding: EdgeInsets.all(2),
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "فارغ";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        if (value.length == 1) {
+                          FocusScope.of(context).nextFocus();
+                        }
+                        if (value.length == 0) {
+                          FocusScope.of(context).previousFocus();
+                        }
+                      },
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'\d')),
+                      ],
+                      maxLength: 1,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                          hintText: "*",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15))),
+                    ),
+                  )),
+                  Expanded(
+                      child: Container(
+                    padding: EdgeInsets.all(2),
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "فارغ";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        if (value.length == 1) {
+                          FocusScope.of(context).nextFocus();
+                        }
+                        if (value.length == 0) {
+                          FocusScope.of(context).previousFocus();
+                        }
+                      },
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'\d')),
+                      ],
+                      maxLength: 1,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                          hintText: "*",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15))),
+                    ),
+                  )),
+                  Expanded(
+                      child: Container(
+                    padding: EdgeInsets.all(2),
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "فارغ";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        if (value.length == 0) {
+                          FocusScope.of(context).previousFocus();
+                        }
+                      },
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'\d')),
+                      ],
+                      maxLength: 1,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                          hintText: "*",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15))),
                     ),
                   )),
                 ],
