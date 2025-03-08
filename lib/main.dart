@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/prov/prov.dart';
 import 'package:shop_app/view/Auth/login.dart';
+import 'package:shop_app/view/Auth/register.dart';
 import 'package:shop_app/view/onboarding/boarding2.dart';
 import 'package:shop_app/view/onboarding/boarding3.dart';
 import 'package:shop_app/view/onboarding/boarding4.dart';
@@ -28,9 +29,10 @@ class MyApp extends StatelessWidget {
           "boarding3": (context) => Boarding3(),
           "boarding4": (context) => Boarding4(),
           "login": (context) => Login(),
+          "register": (context) => Register()
         },
         debugShowCheckedModeBanner: false,
-        home: Login(),
+        home: Register(),
       ),
     );
   }
