@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/companat/dialogApp.dart';
 import 'package:shop_app/prov/prov.dart';
 
 class Register extends StatefulWidget {
@@ -10,6 +11,7 @@ class Register extends StatefulWidget {
 }
 
 class _Register extends State<Register> {
+  Dialogapp dialogapp = new Dialogapp();
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
@@ -40,7 +42,7 @@ class _Register extends State<Register> {
                 children: [
                   Container(
                     width: 250,
-                    height: 60,
+                    height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: const Color.fromARGB(255, 70, 72, 85),
@@ -49,23 +51,28 @@ class _Register extends State<Register> {
                       children: [
                         Expanded(
                             child: Container(
-                          height: 60,
+                          height: 50,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.orange),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                           child: Center(
-                            child: Text(
-                              "تسجيل دخول",
-                              style: TextStyle(color: Colors.white),
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed("login");
+                              },
+                              child: Text(
+                                "تسجيل دخول",
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
                           ),
                         )),
                         Expanded(
                             child: Container(
-                          height: 60,
+                          height: 50,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.orange),
                           child: Center(
                             child: Text(
                               "انشاء حساب",
@@ -177,7 +184,11 @@ class _Register extends State<Register> {
                         )),
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      dialogapp.chickDialog(context, () {
+                        Navigator.of(context).pushNamed("verfiCode");
+                      });
+                    },
                     child: Container(
                       margin: EdgeInsets.all(20),
                       padding:

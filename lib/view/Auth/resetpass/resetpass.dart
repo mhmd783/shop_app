@@ -111,7 +111,7 @@ class _ResetPass extends State<ResetPass> {
                 MaterialButton(
                   onPressed: () {
                     dialogapp.chickDialog(context, () {
-                      print("hello mohamed");
+                      Navigator.of(context).pushNamed("login");
                     });
                   },
                   child: Container(

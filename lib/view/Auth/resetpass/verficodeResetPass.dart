@@ -82,7 +82,7 @@ class _VerficodeResetPass extends State<VerficodeResetPass> {
               MaterialButton(
                 onPressed: () {
                   dialogapp.chickDialog(context, () {
-                    print("hello mohamed");
+                    Navigator.of(context).pushNamed("resetPass");
                   });
                 },
                 child: Container(

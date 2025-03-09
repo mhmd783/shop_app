@@ -85,7 +85,7 @@ class _EnterEmail extends State<EnterEmail> {
               MaterialButton(
                 onPressed: () {
                   dialogapp.chickDialog(context, () {
-                    print("hello mohamed");
+                    Navigator.of(context).pushNamed("verficodeResetPass");
                   });
                 },
                 child: Container(

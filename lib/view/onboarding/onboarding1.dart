@@ -24,7 +24,7 @@ class _Boarding1 extends State<Boarding1> {
               children: [
                 Expanded(child: Container()),
                 Container(
-                  margin: EdgeInsets.only(top: 60, right: 10),
+                  margin: EdgeInsets.only(top: 20, right: 10),
                   height: 30,
                   width: 70,
                   alignment: Alignment.center,

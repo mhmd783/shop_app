@@ -82,7 +82,7 @@ class _Verficode extends State<Verficode> {
               MaterialButton(
                 onPressed: () {
                   dialogapp.chickDialog(context, () {
-                    print("hello mohamed");
+                    Navigator.of(context).pushNamed("login");
                   });
                 },
                 child: Container(
