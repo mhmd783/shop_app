@@ -67,6 +67,7 @@ flutter:
     - assets/images/tomato.png
     - assets/images/seccess.png
     - assets/images/error.png
+    - assets/images/panner.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
