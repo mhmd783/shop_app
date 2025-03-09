@@ -154,15 +154,28 @@ class _Register extends State<Register> {
                               borderRadius: BorderRadius.circular(20)),
                         )),
                   ),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "هل نسيت كلمة المرمر",
-                        style: TextStyle(
-                            color: Colors.blue,
-                            decoration: TextDecoration.underline),
-                      )),
-                  // Spacer(),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    child: TextFormField(
+                        obscureText: val.showpass2,
+                        decoration: InputDecoration(
+                          hintText: "تاكيد كلمة المرور",
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              val.changeShowPass2();
+                            },
+                            icon: Icon(
+                              val.showpass2 == false
+                                  ? Icons.visibility_off_outlined
+                                  : Icons.visibility_outlined,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                        )),
+                  ),
                   MaterialButton(
                     onPressed: () {},
                     child: Container(

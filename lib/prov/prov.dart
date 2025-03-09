@@ -13,4 +13,11 @@ class Control extends ChangeNotifier {
     print(showpass);
     notifyListeners();
   }
+
+  bool showpass2 = false;
+  changeShowPass2() {
+    showpass2 = !showpass2;
+    print(showpass2);
+    notifyListeners();
+  }
 }

@@ -137,7 +137,7 @@ class _Boarding4 extends State<Boarding4> {
                     Expanded(child: Container()),
                     MaterialButton(
                         onPressed: () {
-                          //Navigator.of(context).pushNamed("boarding2");
+                          Navigator.of(context).pushNamed("login");
                         },
                         child: CircleAvatar(
                           radius: 25,

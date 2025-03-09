@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/companat/dialogApp.dart';
 import 'package:shop_app/prov/prov.dart';
 
 class Login extends StatefulWidget {
@@ -10,6 +11,7 @@ class Login extends StatefulWidget {
 }
 
 class _Login extends State<Login> {
+  Dialogapp dialogapp = new Dialogapp();
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
@@ -65,9 +67,14 @@ class _Login extends State<Login> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Center(
-                          child: Text(
-                            "انشاء حساب",
-                            style: TextStyle(color: Colors.white),
+                          child: MaterialButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed("register");
+                            },
+                            child: Text(
+                              "انشاء حساب",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                       )),
@@ -131,7 +138,11 @@ class _Login extends State<Login> {
                     )),
                 // Spacer(),
                 MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    dialogapp.chickDialog(context, () {
+                      Navigator.of(context).pushNamed("home");
+                    });
+                  },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
                     decoration: BoxDecoration(
