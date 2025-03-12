@@ -201,6 +201,9 @@ class _Register extends State<Register> {
                             if (value == null || value.isEmpty) {
                               return "فارغ";
                             }
+                            if (value != val.api.password.text) {
+                              return "كلمة غير متطابقة";
+                            }
                           },
                           controller: val.api.passsword_confirmation,
                           obscureText: val.showpass2,
@@ -224,11 +227,12 @@ class _Register extends State<Register> {
                     ),
                     MaterialButton(
                       onPressed: () {
-                        if (formState.currentState!.validate()) {}
-                        // val.api.Register();
-                        // dialogapp.chickDialog(context, () {
-                        //   Navigator.of(context).pushNamed("verfiCode");
-                        // });
+                        if (formState.currentState!.validate()) {
+                          val.api.Register();
+                          dialogapp.chickDialog(context, () {
+                            Navigator.of(context).pushNamed("verfiCode");
+                          });
+                        }
                       },
                       child: Container(
                         margin: EdgeInsets.all(20),

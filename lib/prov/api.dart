@@ -9,8 +9,11 @@ class Api {
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
   TextEditingController passsword_confirmation = new TextEditingController();
-  var register;
+  var data = null;
+  var register = null;
   Register() async {
+    register = null;
+    data = null;
     String uri = "$ip/api/register";
     var response = await http.post(Uri.parse(uri), headers: {
       "Accept": "application/json",
@@ -22,6 +25,11 @@ class Api {
       "password": "${password.text}",
       "password_confirmation": "${passsword_confirmation.text}",
     });
+
+    if (response.statusCode == 200) {
+      register = response.body;
+      data = response.body;
+    }
     print("respons == ${response.body}");
   }
 }
