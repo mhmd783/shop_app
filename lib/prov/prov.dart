@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/prov/api.dart';
 
 class Control extends ChangeNotifier {
+  Api api = new Api();
   String checkLan = "";
   choseLan(String value) {
     checkLan = value;
