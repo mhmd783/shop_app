@@ -22,4 +22,30 @@ class Control extends ChangeNotifier {
     print(showpass2);
     notifyListeners();
   }
+
+  Register() async {
+    await api.Register();
+    notifyListeners();
+  }
+
+  Login() async {
+    await api.Login();
+    notifyListeners();
+  }
+
+  Verfy() async {
+    await api.Verfy();
+    notifyListeners();
+  }
+
+  Prodect() async {
+    await api.Prodect();
+    notifyListeners();
+  }
+
+  var onprodect = null;
+  OnProdect(int i) {
+    onprodect = api.prodect['data'][i];
+    notifyListeners();
+  }
 }

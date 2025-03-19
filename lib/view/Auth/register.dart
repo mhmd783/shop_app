@@ -228,7 +228,7 @@ class _Register extends State<Register> {
                     MaterialButton(
                       onPressed: () {
                         if (formState.currentState!.validate()) {
-                          val.api.Register();
+                          val.Register();
                           dialogapp.chickDialog(context, () {
                             Navigator.of(context).pushNamed("verfiCode");
                           });

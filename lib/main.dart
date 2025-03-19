@@ -6,12 +6,13 @@ import 'package:shop_app/view/Auth/register.dart';
 import 'package:shop_app/view/Auth/resetpass/enterEmail.dart';
 import 'package:shop_app/view/Auth/resetpass/resetpass.dart';
 import 'package:shop_app/view/Auth/verficode.dart';
+import 'package:shop_app/view/cart/cart.dart';
+import 'package:shop_app/view/details/details.dart';
 import 'package:shop_app/view/home/home.dart';
 import 'package:shop_app/view/onboarding/boarding2.dart';
 import 'package:shop_app/view/onboarding/boarding3.dart';
 import 'package:shop_app/view/onboarding/boarding4.dart';
 import 'package:shop_app/view/onboarding/onboarding1.dart';
-
 import 'view/Auth/resetpass/verficodeResetPass.dart';
 
 void main() {
@@ -41,6 +42,8 @@ class MyApp extends StatelessWidget {
           "verficodeResetPass": (context) => VerficodeResetPass(),
           "resetPass": (context) => ResetPass(),
           "home": (context) => Home(),
+          "cart": (context) => Cart(),
+          "details": (context) => Details()
         },
         debugShowCheckedModeBanner: false,
         home: Boarding1(),

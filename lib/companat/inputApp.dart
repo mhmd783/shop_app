@@ -1,14 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputCode extends StatelessWidget {
-  InputCode({super.key, required this.data});
+  InputCode({super.key, required this.data, required this.control});
   final String data;
+  final TextEditingController control;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(2),
       child: TextFormField(
+        controller: control,
         textAlign: TextAlign.center,
         validator: (value) {
           if (value!.isEmpty) {

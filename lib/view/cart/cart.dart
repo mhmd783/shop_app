@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/prov/prov.dart';
+import 'package:shop_app/view/cart/widget_cart.dart';
 import 'package:shop_app/view/home/widget_home.dart';
 
-class Home extends StatefulWidget {
+class Cart extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _Home();
   }
 }
 
-class _Home extends State<Home> {
+class _Home extends State<Cart> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await Provider.of<Control>(context, listen: false).Prodect();
@@ -23,14 +24,11 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("cart");
-                },
-                icon: Icon(Icons.shopping_cart_outlined))
-          ],
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back)),
         ),
         body: Consumer<Control>(builder: (context, val, child) {
           return val.api.prodect == null
@@ -43,18 +41,16 @@ class _Home extends State<Home> {
                         children: [
                           Container(
                             padding: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(bottom: 30),
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Fruits &\nVegetables",
+                              "Everything in your\ndoor step",
                               style: TextStyle(
                                   fontSize: 25,
                                   fontFamily: "Vexa",
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                          Container(
-                              padding: EdgeInsets.all(20),
-                              child: Image.asset("assets/images/panner.png")),
                           Expanded(
                             child: Container(
                               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -63,8 +59,8 @@ class _Home extends State<Home> {
                                   itemCount: val.api.prodect['data'].length,
                                   gridDelegate:
                                       SliverGridDelegateWithFixedCrossAxisCount(
-                                          mainAxisSpacing: 50,
-                                          crossAxisSpacing: 50,
+                                          mainAxisSpacing: 30,
+                                          crossAxisSpacing: 30,
                                           childAspectRatio: 0.8,
                                           crossAxisCount: MediaQuery.of(context)
                                                       .size
@@ -73,9 +69,8 @@ class _Home extends State<Home> {
                                               ? 2
                                               : 3),
                                   itemBuilder: (context, i) {
-                                    return WidgetHome(
-                                      data: val.api.prodect['data'][i],
-                                    );
+                                    return WidgetCart(
+                                        data: val.api.prodect['data'][i], i: i);
                                   }),
                             ),
                           )
