@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/prov/prov.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class WidgetHome extends StatelessWidget {
   WidgetHome({super.key, required this.data});
@@ -36,7 +37,14 @@ class WidgetHome extends StatelessWidget {
                 Container(
                     height: 55,
                     width: 55,
-                    child: Image.network("${val.api.ip}/${data['image']}")),
+                    child: CachedNetworkImage(
+                      imageUrl: "${val.api.ip}/${data['image']}",
+                      placeholder: (context, url) =>
+                          CircularProgressIndicator(), // مؤشر تحميل
+                      errorWidget: (context, url, error) =>
+                          Icon(Icons.error, color: Colors.red), // أيقونة خطأ
+                      fit: BoxFit.cover, // ضبط حجم الصورة
+                    )),
               ],
             ),
             Container(
